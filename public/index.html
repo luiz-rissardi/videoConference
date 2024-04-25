@@ -1,17 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> RTC App video conference </title>
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="shortcut icon" href="./assets/webCam.png" type="image/png">
+
+    <!-- flatIcon cdn -->
+    <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css">
+
+    <!-- boostrap cdn -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
+
 <body>
 
-    <h1>Hello world</h1>
+    <section class="container-fluid m-0 p-0 hide d-flex" id="enterRoom">
+        <div class="card-room">
+            <article class="w-50">
+                <form class="py-5 d-grid gap-2">
+                    <fieldset class="form-group px-3">
+                        <label for="room" class="form-label text-white"> informe sua sala </label>
+                        <input type="text" id="room" class="form-control" placeholder="informe sua sala aqui">
+                    </fieldset>
+                    <fieldset class="form-group px-3">
+                        <label for="name" class="form-label text-white"> informe o sue nome </label>
+                        <input type="text" id="name" class="form-control" placeholder="informe seu nome aqui">
+                    </fieldset>
 
+                    <button type="button" class="btn btn-primary w-50 mx-3 my-4" id="enterRoomBtn"> entrar </button>
+                </form>
+            </article>
+            <article class="w-50">
+                <h2 class="text-white"> webcam preview </h2>
+                <video autoplay width="100%" height="30%" id="WebCamPreview"></video>
+                <div id="camDisable" class="bg-secondary hiden" style="width:90%; height: 30%;">
+                    <i class="fi fi-rr-camera m-auto text-white" style="font-size: 3rem;"></i>
+                </div>
+
+                <div class="w-100 d-flex justify-content-center mt-3 gap-3">
+                    <button type="button" class="btn btn-secondary" id="audiobtn">
+                        <i class="fi fi-rr-circle-microphone"></i>
+                        <div class="muted hiden" id="mutedAudio"></div>
+                    </button>
+                    <button type="button" class="btn btn-secondary" id="videobtn">
+                        <i class="fi fi-rr-video-camera-alt"></i>
+                        <div class="muted hiden" id="mutedVideo"></div>
+                    </button>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <section class="hide container-fluid p-0 m-0 d-flex flex-wrap flex-column" id="players">
+        <div class="d-flex">
+            <button type="button" class="btn btn-danger ms-auto m-5" id="leave"> SAIR </button>
+        </div>
+        <div class="player mt-5" id="myPlayer">
+            <video autoplay autocapitalize id="myPlayerVideo"></video>
+            <p id="myPlayerName"></p>
+        </div>
+    </section>
+
+    <!-- bootstarp srcipts  -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+        integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+        crossorigin="anonymous"></script>
+
+    <!-- socket client script -->
     <script src="https://cdn.socket.io/3.1.1/socket.io.min.js"
         integrity="sha384-gDaozqUvc4HTgo8iZjwth73C6dDDeOJsAgpxBcMpZYztUfjHXpzrpdrHRdVp8ySO"
         crossorigin="anonymous"></script>
-    <script type="module" src="./js/index.js" ></script>
+
+    <!-- my scripts -->
+    <script type="module" src="./js/index.js"></script>
 </body>
+
 </html>
