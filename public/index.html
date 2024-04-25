@@ -42,13 +42,13 @@
                 </div>
 
                 <div class="w-100 d-flex justify-content-center mt-3 gap-3">
-                    <button type="button" class="btn btn-secondary" id="audiobtn">
+                    <button type="button" class="btn btn-secondary" id="audiobtnPreview">
                         <i class="fi fi-rr-circle-microphone"></i>
-                        <div class="muted hiden" id="mutedAudio"></div>
+                        <div class="muted hiden" id="mutedAudioPreview"></div>
                     </button>
-                    <button type="button" class="btn btn-secondary" id="videobtn">
+                    <button type="button" class="btn btn-secondary" id="videobtnPreview">
                         <i class="fi fi-rr-video-camera-alt"></i>
-                        <div class="muted hiden" id="mutedVideo"></div>
+                        <div class="muted hiden" id="mutedVideoPreview"></div>
                     </button>
                 </div>
             </article>
@@ -62,6 +62,16 @@
         <div class="player mt-5" id="myPlayer">
             <video autoplay autocapitalize id="myPlayerVideo"></video>
             <p id="myPlayerName"></p>
+            <div class="w-100 d-flex justify-content-center gap-3 playerControlls">
+                <button type="button" class="btn btn-secondary" id="audiobtn">
+                    <i class="fi fi-rr-circle-microphone"></i>
+                    <div class="muted hiden" id="mutedAudio"></div>
+                </button>
+                <button type="button" class="btn btn-secondary" id="videobtn">
+                    <i class="fi fi-rr-video-camera-alt"></i>
+                    <div class="muted hiden" id="mutedVideo"></div>
+                </button>
+            </div>
         </div>
     </section>
 

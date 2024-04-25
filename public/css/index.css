@@ -43,8 +43,13 @@
 
 .player p {
     position: relative;
-    top: -20%;
+    top: -75%;
     margin-inline: auto;
     color: white;
     font-size: 2rem;
+}
+
+.playerControlls{
+    position: relative;
+    top: -35%;
 }
